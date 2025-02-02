@@ -7,7 +7,7 @@ import Link from "next/link";
 import { GitHubContributions } from "@/components/github-contributions";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { projects } from "./projects/page";
+import { projects } from "@/data/projects";
 
 const socialLinks = [
   {
