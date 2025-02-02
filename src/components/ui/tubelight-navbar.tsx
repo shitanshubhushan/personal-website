@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Book, FileText, HomeIcon, Lightbulb, Newspaper } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -19,8 +20,16 @@ interface NavBarProps {
 }
 
 export function NavBar({ className }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(navItems[0].name)
+  const pathname = usePathname()
   const [isMobile, setIsMobile] = useState(false)
+
+  // Find active tab based on current pathname
+  const activeTab = navItems.find(item => {
+    if (item.url === '/') {
+      return pathname === '/'
+    }
+    return pathname.startsWith(item.url)
+  })?.name || navItems[0].name
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,7 +57,6 @@ export function NavBar({ className }: NavBarProps) {
             <Link
               key={item.name}
               href={item.url}
-              onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-sm font-medium px-4 py-2 rounded-full transition-colors",
                 "text-foreground/60 hover:text-foreground",
