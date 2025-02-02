@@ -8,33 +8,9 @@ import { GitHubContributions } from "@/components/github-contributions";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { projects } from "@/data/projects";
-
-const socialLinks = [
-  {
-    name: "GitHub",
-    url: "https://github.com/shitanshubhushan",
-    icon: Github,
-    description: "View my projects",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/shitanshu273",
-    icon: Linkedin,
-    description: "Connect with me",
-  },
-  {
-    name: "Medium",
-    url: "https://medium.com/@shitanshu273",
-    icon: MessageCircle,
-    description: "Read my blogs",
-  },
-  {
-    name: "X",
-    url: "https://x.com/shitanshu273",
-    icon: Twitter,
-    description: "Follow me",
-  },
-];
+import profileImage from "@/assets/images/profile.jpg";
+import Image from "next/image";
+import { socialLinks } from "@/data/social-links";
 
 const featuredProjects = projects
   .filter((project): project is (typeof projects)[0] => project.featured)
@@ -85,14 +61,13 @@ export default function HomePage() {
         {/* Left Section - Profile */}
         <div className="w-full md:w-[20%] flex flex-col items-center justify-start p-4 md:p-6 border-r border-border/10 overflow-y-auto">
           <div className="relative w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden mb-4">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500" />
-            {/* Uncomment when you have a profile picture */}
-            {/* <Image
-              src="/profile.jpg"
+            <Image
+              src={profileImage}
               alt="Shitanshu Bhushan"
               fill
               className="object-cover"
-            /> */}
+              priority
+            />
           </div>
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <h1 className="text-xl md:text-2xl font-bold mb-2">Shitanshu Bhushan</h1>
