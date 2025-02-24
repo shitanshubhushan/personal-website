@@ -66,7 +66,7 @@ export default function ResumePage() {
               className="w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
             >
               <iframe
-                src="https://drive.google.com/file/d/1VT-Qpz63EXlxe3ObXlMmDxUCjD07rdO4/preview"
+                src="https://drive.google.com/file/d/1p6ONoDPRu4Hvpp63WMnf86kN2fz0nlRb/preview"
                 allow="autoplay"
                 className="w-full h-full border-0"
               ></iframe>
