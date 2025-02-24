@@ -1,5 +1,16 @@
 export const projects = [
     {
+        title: "LLM Catan Battle",
+        date: "Jan 2024",
+        description: [
+          "Implemented a system to have different LLMs play Catan against each other using the Catanatron framework, pitting GPT-4o-mini against Gemini 2.0 Flash in strategic gameplay scenarios",
+          "Observed and analyzed LLM performance in complex game-theoretic situations, finding that current LLMs struggle with the strategic depth of Catan despite their general capabilities"
+        ],
+        github: "https://github.com/shitanshubhushan/catanatron_LLM",
+        tags: ["LLM", "Python", "Game Theory", "AI"],
+        featured: false
+      },
+      {
         title: "LMAOCaT: Low-rank Mamba and gated Attention Optimization",
         date: "Oct 2024 - Dec 2024",
         description: [

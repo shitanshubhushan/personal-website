@@ -71,48 +71,40 @@ export default function ResearchPage() {
         <div className="w-full md:w-[80%] h-screen flex flex-col">
           <NavBar />
           <div className="flex-1 overflow-y-auto p-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-6xl mx-auto"
-            >
-              <h1 className="text-3xl font-bold mb-8">Research</h1>
-              <div className="grid grid-cols-1 gap-6">
-                {researchWork.map((research, index) => (
-                  <motion.div
-                    key={research.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-background/50 border border-border/50 rounded-lg p-6 hover:shadow-lg transition-all"
-                  >
-                    <div className="flex flex-col mb-4">
-                      <h2 className="text-xl font-semibold mb-1">{research.title}</h2>
-                      <p className="text-sm text-muted-foreground mb-1">{research.institution}</p>
-                      <p className="text-sm text-muted-foreground">{research.date}</p>
+            <div className="max-w-4xl space-y-12">
+              {/* Research Experience */}
+              <div>
+                <h2 className="text-2xl font-bold mb-6">Research Experience</h2>
+                
+                {/* LAUNCH Lab Position */}
+                <div className="mb-8">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h3 className="text-xl font-semibold">Research Assistant - LAUNCH Lab</h3>
+                      <p className="text-muted-foreground">University of Michigan</p>
                     </div>
-                    <ul className="list-disc list-inside space-y-2 mb-4">
-                      {research.description.map((point, i) => (
-                        <li key={i} className="text-sm text-muted-foreground">
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-2">
-                      {research.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
+                    <p className="text-sm text-muted-foreground">Dec 2024 - Present</p>
+                  </div>
+                  
+                  <ul className="list-disc list-inside space-y-2 mt-4 text-sm">
+                    <li className="text-muted-foreground">
+                      Worked with <span className="font-medium text-foreground">Yunxiang Zhang</span> to 
+                      develop a benchmark for evaluating LLM agents on machine learning research tasks.
+                    </li>
+                    <li className="text-muted-foreground">
+                      Refactored existing codebases to enable the seamless addition of new challenges 
+                      within the benchmark, ensuring modularity and maintainability.
+                    </li>
+                    <li className="text-muted-foreground">
+                      Conducting analysis of agent traces to identify common failure modes and 
+                      performance bottlenecks, providing insights for improving agent robustness.
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* ... any existing research positions ... */}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
